@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Shopping list example</title>
+    <style>
+      li {
+        margin-bottom: 10px;
+      }
+
+      li button {
+        font-size: 8px;
+        margin-left: 20px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>My shopping list</h1>
+
+    <div>
+      <label for="item">Enter a new item:</label>
+      <input type="text" name="item" id="item">
+      <button>Add item</button>
+    </div>
+
+    <ul>
+
+    </ul>
+
+    <script>
+//Created three variables that hold references to the list (<ul>), <input>, and <button> elements
+      const list = document.querySelector('ul');
+      const input = document.querySelector('input');
+      const button = document.querySelector('button');
+// function to run in response to the button being clicked
+      button.onclick = function() {
+        let myItem = input.value;// storing the current value of the input element in a variable
+        input.value = '';
+//Created three new elements — a list item (<li>), <span>, and <button>, and store them in variables
+        const listItem = document.createElement('li');
+        const listText = document.createElement('span');
+        const listBtn = document.createElement('button');
+//Appended the span and the button as children of the list item
+
+        listItem.appendChild(listText);
+        listText.textContent = myItem;
+        
+        listBtn.textContent = 'Delete';
+//Appended the list item as a child of the list
+        list.appendChild(listItem);
+        listItem.appendChild(listBtn);
+//an event handler to the delete button
+        listBtn.onclick = function(e) {
+          list.removeChild(listItem);
+        }
+//focus() method is use for focusing the input element ready for entering the next shopping list item
+        input.focus();
+      }
+    </script>
+  </body>
+</html>

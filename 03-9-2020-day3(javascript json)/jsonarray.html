@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<p>Access an array value of a JSON object.</p>
+
+<p id="one"></p>
+
+
+<script>
+       var myObj, x="", i;
+myObj = {
+  "name":"John",
+  "age": 30,
+  "cars":["jaguar", "BMW", "porsche" ]
+};
+
+x = myObj.cars[0]+ "<br>";//acessing by index
+
+myObj.cars[1] = "Mercedes";//Modify
+
+//acessing through loop
+for (i in myObj.cars) {
+  x += myObj.cars[i] + "<br>";
+}
+
+
+delete myObj.cars[1];//deleting element
+for (i in myObj.cars) {
+  x += myObj.cars[i] + "<br>";
+}
+
+document.getElementById("one").innerHTML = x;
+    </script>
+
+    
+</body>
+</html>

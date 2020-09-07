@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Simple DOM example</title>
+    <style>
+      /* dynamically manipulate styles*/
+      .highlight {
+        color: white;
+        background-color: black;
+        padding: 10px;
+        width: 250px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <img src="../image/dinosaur.png" alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth.">
+      <p>Here we will add a link to the <a href="https://www.mozilla.org/">Mozilla homepage</a></p>
+    </section>
+
+    <script>
+      const link = document.querySelector('a');
+      link.textContent = 'Mozilla Developer Network';
+      link.href = 'https://developer.mozilla.org';
+//Creating and placing new nodes
+      const sect = document.querySelector('section');
+//create a new paragraph using Document.createElement()
+      const para = document.createElement('p');
+      para.textContent = 'We hope you enjoyed the ride.';
+// append the new paragraph at the end of the section       
+      sect.appendChild(para);
+//add a text node to the paragraph inside  link
+      const text = document.createTextNode(' — the premier source for web development knowledge.');
+//grab a reference to the paragraph the link is inside
+      const linkPara = document.querySelector('p');
+      linkPara.appendChild(text);
+
+//Moving and removing elements
+      sect.appendChild(linkPara);// move the paragraph with the link inside it to the bottom of the section
+      linkPara.parentNode.removeChild(linkPara);//remove para
+// dynamically manipulate styles
+      para.setAttribute('class', 'highlight');
+    </script>
+  </body>
+</html>
