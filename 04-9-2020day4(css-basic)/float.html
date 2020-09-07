@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float and clear</title>
+    <style>
+        .container1{
+            width: 1200px;
+            border: 3px solid black;
+            margin:auto;
+            
+        }
+        body{
+            font-family:monospace;
+        }
+        #fruits {
+            float: right;
+            width: 48%;
+        }
+        p, h3{
+            text-align:justify;
+        }
+        #grain {
+            float: left;
+            width: 48%;
+        }
+
+        #vegetable {
+            /* float: left; */
+            clear: both;
+            
+            width: 100%;
+        }
+        .item{ 
+            border: 3px solid grey;
+            margin: 12px 3 px;
+            background: pink;
+            padding:12px 3px
+
+        }
+        *{
+
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container1">
+        <div  id="fruits" class ="item">
+            <h3>fruits</h3>
+            <p id ="apple" class= "kilgram">loren30 This module carries on where CSS first steps left off — now you've gained familiarity with the language and its syntax, and got some basic experience with using it, its time to dive a bit deeper. This module looks at the cascade and inheritance, all the selector types we have available, units, sizing, styling backgrounds and borders, debugging, and lots more.
+
+            </p>
+        </div>
+        <div  id="grain" class ="item">
+            <h3>grain</h3>
+            <p id ="rice" class= "kilgram">loren30This module carries on where CSS first steps left off — now you've gained familiarity with the language and its syntax, and got some basic experience with using it, its time to dive a bit deeper. This module looks at the cascade and inheritance, all the selector types we have available, units, sizing, styling backgrounds and borders, debugging, and lots more.
+
+                 </p>
+        </div>
+        <div  id="Vegetable" class ="item">
+            <h3>Vegetable</h3>
+            <p id ="potato" class= "kilgram">loren30 The aim here is to provide you with a toolkit for writing competent CSS and help you understand all the essential theory, before moving on to more specific disciplines like 
+
+            </p>
+        </div>
+    </div>
+</body>
+</html>
