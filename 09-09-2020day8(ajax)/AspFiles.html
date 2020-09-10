@@ -1,0 +1,38 @@
+<!--shows how a web page can communicate with a web server while 
+  a user type characters in an input field-->
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>The XMLHttpRequest Object</h2>
+
+<h3>Start typing a name in the input field below:</h3>
+
+<p>Suggestions: <span id="txtHint"></span></p> 
+
+<p>First name: <input type="text" id="txt1" onkeyup="showHint(this.value)"></p>
+<!--function is triggered by the onkeyup event-->
+
+<script>
+function showHint(str) {
+  var xhttp;
+  if (str.length == 0) { 
+    document.getElementById("txtHint").innerHTML = "";
+    return;
+  }
+  xhttp = new XMLHttpRequest();//Create an XMLHttpRequest object
+  xhttp.onreadystatechange = function()
+  //Create the function to be executed when the server response is ready
+  {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("txtHint").innerHTML = this.responseText;
+    }
+  };
+  //Send the request off to an ASP file (gethint.asp) on the server
+  xhttp.open("GET", "gethint.asp?q="+str, true);//str variable holds the content of the input field
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>
