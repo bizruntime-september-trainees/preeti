@@ -1,0 +1,18 @@
+
+
+@import './header';
+@import './variable';
+
+.contact {
+    background: $primary1;
+    @include flexCenter(row, blue);
+
+    //inherit header
+    @extend header;
+    //override
+    background: red;
+    //calc ulation
+    width: 100% - 20%;
+
+}
+

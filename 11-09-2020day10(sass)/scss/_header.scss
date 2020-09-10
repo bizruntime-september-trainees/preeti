@@ -1,0 +1,32 @@
+//mixing same like function
+
+@mixin flexCenter($direction, $background) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    flex-direction:$direction;
+    background-color: $background;
+
+    
+}
+
+
+header{
+
+    @include flexCenter(column, red);
+
+    //background: lightblue;
+    display: flex;
+    justify-content: center;
+    color: $textcolor;
+    height:50vh;
+    align-items: center ;
+     
+}
+button{
+    background: $primary1;
+    &::after{
+        content: "hiiiiiiii";
+    }
+}
