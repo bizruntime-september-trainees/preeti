@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB-SOCKETS</title>
+</head>
+<body>
+    <h1>web-Socket</h1>
+    <p>hello world!!!</p>
+    <script>
+        const ws = new WebSocket("ws://localhost:8082") ;
+        //ws localhost
+        //for production use wss its more secure
+        ws.addEventListener("open", ()=>{
+            console.log("we are connected"); 
+            //sending msg to frm browser to server
+            ws.send("hey, how are you ");
+
+        });
+        //send back fron client to server
+        ws.addEventListener("message", ({data})=>
+        {
+            console.log(data);
+        }
+        );
+        
+        
+        </script>
+</body>
+</html>

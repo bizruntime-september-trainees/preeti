@@ -1,0 +1,15 @@
+<!-- adding two number -->
+    <script>
+    if(window.Worker)//checking the webworker functionality for browser
+    {
+        //creating new webworker using constructor
+        var myWorker = new Worker("worker.js");
+        var msg = { addThis: {n1:1,n2:2}};
+        myWorker.postMessage(msg);//passing msg to wworker
+        myWorker.onmessage = function (e) {
+            console.dir(e.data.result);
+            
+        };
+
+    }
+</script>
