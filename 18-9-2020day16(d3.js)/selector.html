@@ -1,0 +1,28 @@
+Live Demo
+<!DOCTYPE html>
+<html>
+   <head>
+      <script type = "text/javascript" src = "https://d3js.org/d3.v4.min.js"></script>
+   </head>
+
+   <body>
+       <!-- using class name -->
+      <div class = "myclass">
+         Hello World!<span> !!!!</span>
+      </div>
+      <p> para 1</p>
+      
+      <script>
+        alert(d3.select(".myclass").text());
+         d3.select("div.myclass").append("span");//append() method appends a new element as the last child of the element in the current selection
+         d3.select(".myclass").attr("style", "color: red");
+      //attr() method is used to add or update the attribute of the selected elements
+      
+      //attr() method is used to add or update the attribute of the selected elements
+      d3.select('p').style("color","blue");
+      
+      </script>
+
+     
+   </body>
+</html>
