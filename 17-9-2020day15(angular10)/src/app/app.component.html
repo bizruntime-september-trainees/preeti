@@ -1,0 +1,28 @@
+<h1> Angular basic </h1>
+<app-login></app-login>
+<button (click)= "getName()">click</button>
+<!-- <button (click)= "getName1( 'john')">click</button> -->
+<button (click)= "myEvent('click Event')">click me</button><br>
+<br>
+<input type="text" #box (keyup.enter)= "myEvent(box.value)"/>
+<input type="text" #box1 (keydown)= "myEvent(box1.value)"/>
+<input type="text"  (blur)= "myEvent('blur event')"/>
+<div (mouseleave) ="myEvent('mouse in ')"
+style ="background-color: blue;">
+mouse events
+</div>
+
+<!-- //keyup it react when you press key
+
+//keydown react after key is been pressed -->
+
+
+<!-- <h3>write anything</h3>
+<input type="text" (keyup) ="getValue($ event.target.value)"/>
+<h1>{{print}}</h1> -->
+
+<h1>property Binding in angular</h1>
+<input type="text" disabled value={{name}} />
+<br>
+<input type ="text" value={{name}}/>
+<button>Enable TextBox</button>
